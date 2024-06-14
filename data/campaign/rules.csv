@@ -1,0 +1,13 @@
+id,trigger,conditions,script,text,options,notes
+oldstory_onSurveyIntercept,DialogOptionSelected,"$option == surveyPerform score:1000
+SurveyStoryReader PREP_STORY",,"The operation progresses swiftly. Your survey teams, accompanied by swarms of drones, do the routine checks on the local ruins. Judging by how the lone archivists' comms light up, he may have more insights on the fate that befell this planet.","0:oldstory_intro:Check in with the archivist
+1:surveyPerform:Ignore it and continue the survey",
+oldstory_intro,DialogOptionSelected,$option == oldstory_intro,"SurveyStoryReader READ_INTRO
+FireAll OldStoryReader",,0:oldstory_readnext:Continue,
+oldstory_readnext,DialogOptionSelected,$option == oldstory_readnext,"SurveyStoryReader READ_NEXT
+FireAll OldStoryReader",,,
+oldstory_outro,DialogOptionSelected,$option == oldstory_outro,SurveyStoryReader READ_OUTRO,,10:surveyPerform:Continue the survey,
+oldstory_addNextOption,OldStoryReader,"$option == oldstory_readnext
+SurveyStoryReader HAS_NEXT",,,0:oldstory_readnext:Continue,
+oldstory_addOutroOption,OldStoryReader,"$option == oldstory_readnext
+!SurveyStoryReader HAS_NEXT",,,0:oldstory_outro:Continue,

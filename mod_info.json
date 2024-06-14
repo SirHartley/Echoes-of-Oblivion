@@ -1,0 +1,9 @@
+{
+    "id": "oldstory",
+    "name": "Echoes of Oblivion",
+    "author": "",
+    "version": "1.0.a",
+    "description": "Shows the story of how planets fell to ruin",
+    "gameVersion": "0.97a",
+    "jars":["jars/oldstories.jar"]
+}

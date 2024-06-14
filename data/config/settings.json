@@ -1,0 +1,7 @@
+{
+  "oldstory_csv_path": "data/campaign/stories.csv",
+
+  "ruleCommandPackages":[
+    "oldstory.dialogue.rules"
+  ]
+}
